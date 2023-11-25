@@ -23,7 +23,10 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import { useEffect } from "react";
 
+
 setupIonicReact();
+
+
 
 const App: React.FC = () => {
 
