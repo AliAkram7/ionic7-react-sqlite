@@ -51,6 +51,9 @@ const Home: React.FC = () => {
     }
   };
 
+
+
+
   const updateItem = async () => {
     try {
       // add test record to db
@@ -75,6 +78,10 @@ const Home: React.FC = () => {
     }
   };
 
+
+
+
+
   const addItem = async () => {
     try {
       // add test record to db
@@ -98,6 +105,8 @@ const Home: React.FC = () => {
     }
   };
 
+
+  
   const confirmDelete = (itemId: number) => {
     showConfirmationAlert("Are You Sure You Want To Delete This Item?", () => {
       deleteItem(itemId);

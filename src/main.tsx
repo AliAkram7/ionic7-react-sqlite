@@ -17,10 +17,14 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     // WEB SPECIFIC FUNCTIONALITY
     if (platform === "web") {
+
       const sqlite = new SQLiteConnection(CapacitorSQLite);
       // Create the 'jeep-sqlite' Stencil component
+
       customElements.define("jeep-sqlite", JeepSqlite);
+
       const jeepSqliteEl = document.createElement("jeep-sqlite");
+      
       document.body.appendChild(jeepSqliteEl);
       await customElements.whenDefined("jeep-sqlite");
       console.log(`after customElements.whenDefined`);

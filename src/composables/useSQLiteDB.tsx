@@ -6,6 +6,8 @@ import {
 } from "@capacitor-community/sqlite";
 
 const useSQLiteDB = () => {
+
+
   const db = useRef<SQLiteDBConnection>();
   const sqlite = useRef<SQLiteConnection>();
   const [initialized, setInitialized] = useState<boolean>(false);
@@ -38,6 +40,8 @@ const useSQLiteDB = () => {
     });
   }, []);
 
+
+
   const performSQLAction = async (
     action: (db: SQLiteDBConnection | undefined) => Promise<void>,
     cleanup?: () => Promise<void>
@@ -59,13 +63,16 @@ const useSQLiteDB = () => {
    * here is where you cna check and update table
    * structure
    */
+
   const initializeTables = async () => {
     performSQLAction(async (db: SQLiteDBConnection | undefined) => {
       const queryCreateTable = `
+
       CREATE TABLE IF NOT EXISTS test (
       id INTEGER PRIMARY KEY NOT NULL,
       name TEXT NOT NULL
       );
+      
     `;
       const respCT = await db?.execute(queryCreateTable);
       console.log(`res: ${JSON.stringify(respCT)}`);
